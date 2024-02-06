@@ -15,10 +15,16 @@ body {
 .tip {
     font-style: italic;
     font-weight: bold;
-    margin: 24px;
+    font-size: small;
+    margin: 5px;
     font-family: 'Courier New', Courier, monospace;
 }
-
+.checkboxes {
+    margin: 0;
+}
+.counter {
+    margin: 0;
+}
 .metronome {
     display: flex;
     width: 350px;
