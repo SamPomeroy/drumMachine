@@ -10,43 +10,34 @@ const metronome = document.querySelector('#metronome');
 const hiHat = document.querySelector('#hiHat');
 const kickDrum = document.querySelector('#kickDrum')
 const snareDrum = document.querySelector('#snareDrum')
+const kickDrumInterval = document.querySelector('#kickDrumInterval')
+const hiHatInterval = document.querySelector('#hiHatInterval')
+const snareDrumInterval = document.querySelector('#snareDrumInterval')
 
 // This function is called every 600ms
 function update() {
+    if(count > 4){
+        count = 1
+    }
     if(metronome.checked){
-        if((count+2)%4 === 0){
+        if(count === 4){
             tockSound.play();
         }else{
-            // Play the 'tick' sound
             tickSound.play();
             }
     }
-    if(hiHat.checked){
-        // if((count+2)%4 === 0){
-        //     tockSound.play();
-        // }else{
-            // Play the 'tick' sound
-            hiHatSound.play();
-            }
-    // }
-    if(kickDrum.checked && document.querySelector('#kickDrumInterval').value == count){
-        // if((count+2)%4 === 0){
-        //     tockSound.play();
-        // }else{
-            // Play the 'tick' sound
-            kickDrumSound.play();
-            }
-    // }
-    if(snareDrum.checked){
-        // if((count+2)%4 === 0){
-        //     tockSound.play();
-        // }else{
-            // Play the 'tick' sound
+    console.log(hiHatInterval.value)
+    if(hiHat.checked && (hiHatInterval.value == count || hiHatInterval.value === "")){
+          hiHatSound.play();
+    }
+    if(kickDrum.checked && (kickDrumInterval.value == count || kickDrumInterval.value === "")){
+          kickDrumSound.play();
+    }
+    if(snareDrum.checked && (snareDrumInterval.value == count || snareDrumInterval.value === "")){
             snareDrumSound.play();
-            }
-    // }
+    }
+    counter.innerText = count
     count++
-    counter.innerText = `${count % 4 +1}`
    
     
 
