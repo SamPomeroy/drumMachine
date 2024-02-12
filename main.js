@@ -4,6 +4,7 @@ const tockSound = new Audio('sounds/tock.mp3');
 const hiHatSound = new Audio('sounds/hi-hat.mp3');
 const kickDrumSound = new Audio('sounds/kick-drum.mp3');
 const snareDrumSound = new Audio('sounds/snare-drum.mp3')
+const waveSound = new Audio('sounds/wave.wav')
 let count = 0;
 const counter = document.querySelector('#counter');
 const metronome = document.querySelector('#metronome');
@@ -13,6 +14,7 @@ const snareDrum = document.querySelector('#snareDrum')
 const kickDrumInterval = document.querySelector('#kickDrumInterval')
 const hiHatInterval = document.querySelector('#hiHatInterval')
 const snareDrumInterval = document.querySelector('#snareDrumInterval')
+const waveInterval = document.querySelector('#waveInterval')
 
 // This function is called every 600ms
 function update() {
@@ -36,6 +38,9 @@ function update() {
     if(snareDrum.checked && (snareDrumInterval.value == count || snareDrumInterval.value === "")){
             snareDrumSound.play();
     }
+    if(wave.checked && (waveInterval.value == count || waveInterval.value === "")){
+        waveSound.play();
+}
     counter.innerText = count
     count++
    
